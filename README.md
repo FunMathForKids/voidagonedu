@@ -1,5 +1,25 @@
 # Voidagon
 
+### Table of Contents
+
+1. [Welcome to Voidagon XYZ](#welcome-to-voidagon-xyz)
+2. [Why Choose Voidagon XYZ?](#why-choose-voidagon-xyz)
+3. [Play Anywhere, Anytime](#play-anywhere-anytime)
+4. [How It Works](#how-it-works)
+5. [Security and Trust](#security-and-trust)
+6. [Completely Ad-Free](#completely-ad-free)
+7. [Optimized for Performance](#optimized-for-performance)
+8. [Access to a Variety of Games](#access-to-a-variety-of-games)
+9. [No Installation Required](#no-installation-required)
+10. [Completely Portable and Flexible](#completely-portable-and-flexible)
+11. [Regular Updates and Improvements](#regular-updates-and-improvements)
+12. [A True Gaming Revolution](#a-true-gaming-revolution)
+
+
+
+
+
+
 # Welcome to Voidagon XYZ
 Voidagon XYZ is the ultimate collection of over 40 unblocked and undetected games, designed for gamers who want seamless access, fast performance, and total freedom. Whether you're at home, school, or on the go, Voidagon XYZ ensures uninterrupted gaming without restrictions or detection. Say goodbye to slow load times, blocked websites, and security risks. With Voidagon XYZ, you get an optimized, sleek, malware-free gaming solution that’s fully functional in any environment, giving you the freedom to play wherever you are.
 
