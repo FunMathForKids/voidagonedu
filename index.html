@@ -7,8 +7,11 @@
     <title>V O I D A G O N</title>
     
     <!-- Link to Google Fonts for Orbitron, Monoton, and Silkscreen -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Monoton&family=Silkscreen&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&amp;family=Monoton&amp;family=Silkscreen&amp;display=swap" rel="stylesheet">
     <style>
+        /* Apply custom gamer font */
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap');
+
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
@@ -22,11 +25,13 @@
             font-weight: bold;
             font-size: 4rem;
             margin-top: 50px;
+            display: inline;
         }
         h2 {
             font-family: 'Silkscreen', sans-serif;
             font-size: 2rem;
-            margin-left: 10px;
+            display: inline;
+            margin-left: 10px; /* Closer to the title */
         }
         h2 span {
             font-size: 2rem;
@@ -35,52 +40,147 @@
         }
         .x {
             color: green;
+            text-decoration-color: green;
         }
         .y {
             color: blue;
+            text-decoration-color: blue;
         }
         .z {
             color: red;
+            text-decoration-color: red;
         }
         .subheading {
             font-family: 'Monoton', cursive;
             font-size: 1.5rem;
             margin-top: 20px;
         }
-        .info-box {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid #fff;
-            padding: 20px;
-            margin: 30px auto;
-            width: 80%;
-            border-radius: 8px;
-            text-align: center;
-            font-family: 'Press Start 2P', sans-serif;
-            font-size: 1rem;
-        }
-        button {
+
+        /* Add rainbow glowing effect to every button */
+        .download-button, .tutorial-button, .image-tutorial-button, .video-tutorial-button {
             background: linear-gradient(135deg, #ff7e5f, #feb47b);
             border: none;
-            padding: 15px 40px;
-            font-size: 18px;
+            padding: 20px 50px;
+            font-size: 20px;
             color: white;
-            border-radius: 8px;
+            text-transform: uppercase;
+            border-radius: 10px;
             cursor: pointer;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
             font-family: 'Press Start 2P', sans-serif;
-            transition: transform 0.3s, box-shadow 0.3s ease-in-out;
-            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+            animation: rainbow-glow 1.5s ease-in-out infinite alternate; /* Rainbow glow effect */
         }
-        button:hover {
+
+        /* Keyframes for rainbow glowing effect */
+        @keyframes rainbow-glow {
+            0% {
+                box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+            }
+            16% {
+                box-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange;
+            }
+            32% {
+                box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;
+            }
+            48% {
+                box-shadow: 0 0 10px green, 0 0 20px green, 0 0 30px green;
+            }
+            64% {
+                box-shadow: 0 0 10px blue, 0 0 20px blue, 0 0 30px blue;
+            }
+            80% {
+                box-shadow: 0 0 10px indigo, 0 0 20px indigo, 0 0 30px indigo;
+            }
+            100% {
+                box-shadow: 0 0 10px violet, 0 0 20px violet, 0 0 30px violet;
+            }
+        }
+
+        /* Glowing effect on hover */
+        .download-button:hover, .tutorial-button:hover, .image-tutorial-button:hover, .video-tutorial-button:hover {
             transform: scale(1.1);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+            text-shadow: 0 0 8px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
         }
-        button:active {
+
+        /* Active state for buttons */
+        .download-button:active, .tutorial-button:active, .image-tutorial-button:active, .video-tutorial-button:active {
             transform: scale(1);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .hidden {
+
+        /* Tutorial Modal */
+        .tutorial-modal {
             display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .tutorial-modal .tutorial-options {
+            background-color: #333;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            animation: rainbow-glow 1.5s ease-in-out infinite alternate;
+        }
+
+        .tutorial-modal .tutorial-options button {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #5BC0EB;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .tutorial-modal .tutorial-options button:hover {
+            background-color: #4fa3d1;
+        }
+        .tutorial-modal .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #e74c3c;
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .tutorial-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        .tutorial-content iframe {
+            width: 80vw;
+            height: 80vh;
+            border: none;
+        }
+        .tutorial-content video {
+            width: 80%;
+            height: 80vh;
+        }
+
+        .info-text {
+            font-family: 'Press Start 2P', sans-serif;
+            font-size: 1.2rem;
+            margin-top: 40px;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -90,37 +190,64 @@
     <h2><span class="x">X</span> <span class="y">Y</span> <span class="z">Z</span></h2>
     <p class="subheading">Your one-stop destination for 40+ unblocked and undetected games.</p>
 
-    <!-- Download Button -->
-    <button class="download-button" id="download-btn">Download the Future</button>
+    <!-- Embed the Download Button -->
+    <a href="https://github.com/FunMathForKids/fun-school-math/releases/download/1.1/math-games-for-yr7-to-yr11.zip" target="_blank">
+        <button class="download-button">DOWNLOAD THE FUTURE</button>
+    </a>
 
     <!-- Tutorial Button -->
     <button class="tutorial-button" id="tutorial-btn">Tutorial</button>
 
-    <!-- Information Boxes -->
-    <div class="info-box hidden" id="download-info">
-        <p>We sincerely apologize for the inconvenience. The official folder for <strong>Voidagon XYZ</strong> is currently unavailable for download. This is due to security concerns arising from unauthorized access attempts. We are actively addressing the issue, and downloads will be restored as soon as possible. Thank you for your understanding and patience.</p>
+    <!-- Information Text -->
+    <div class="info-text">
+        <p>40+ games so far, all undetected! + They all have disguised names.</p>
+        <p>Some folders will have a text file named "Math Vocab". They say the names of the games in it because the things shown are like "PacMath" for example, and the vocab thing shows you "PacMath = Pacman".</p>
+        <p>BTW there might look like 20 games or something, but go to the "More" and "Even More" folders!</p>
+        <p>Fun fact: If you wanna know how to say VOIDAGON X Y Z, just say "hexagon" and replace the "hex" with "Void".</p>
+        <p>The name VOIDAGON X Y Z was chosen because Void + Hexagon + X Y Z = VOIDAGON X Y Z (the XYZ is because it looks cool lol).</p>
+        <p>BTW if you came here for math games...</p>
     </div>
 
-    <div class="info-box hidden" id="tutorial-info">
-        <p>We apologize for the inconvenience. The tutorial is temporarily unavailable due to ongoing secuirity updates to enhance your experience. Please check back soon for the improved version. Thank you for your understanding.</p>
+    <!-- Tutorial Modal -->
+    <div class="tutorial-modal" id="tutorial-modal">
+        <button class="close-btn" id="close-btn">X</button>
+        <div class="tutorial-options">
+            <button class="image-tutorial-button" id="image-tutorial-btn">Image Tutorial</button>
+            <button class="video-tutorial-button" id="video-tutorial-btn">Video Tutorial</button>
+        </div>
+        <div class="tutorial-content" id="tutorial-content">
+            <!-- PDF or video content will be displayed here -->
+        </div>
     </div>
 
     <script>
-        const downloadBtn = document.getElementById('download-btn');
+        // JavaScript for tutorial modal functionality
         const tutorialBtn = document.getElementById('tutorial-btn');
-        const downloadInfo = document.getElementById('download-info');
-        const tutorialInfo = document.getElementById('tutorial-info');
+        const tutorialModal = document.getElementById('tutorial-modal');
+        const closeBtn = document.getElementById('close-btn');
+        const imageTutorialBtn = document.getElementById('image-tutorial-btn');
+        const videoTutorialBtn = document.getElementById('video-tutorial-btn');
+        const tutorialContent = document.getElementById('tutorial-content');
 
-        // Show download info when download button is clicked
-        downloadBtn.addEventListener('click', () => {
-            downloadInfo.classList.toggle('hidden');
-            tutorialInfo.classList.add('hidden'); // Hide tutorial info if open
+        // Open tutorial modal when clicking the tutorial button
+        tutorialBtn.addEventListener('click', () => {
+            tutorialModal.style.display = 'flex';
         });
 
-        // Show tutorial info when tutorial button is clicked
-        tutorialBtn.addEventListener('click', () => {
-            tutorialInfo.classList.toggle('hidden');
-            downloadInfo.classList.add('hidden'); // Hide download info if open
+        // Close tutorial modal
+        closeBtn.addEventListener('click', () => {
+            tutorialModal.style.display = 'none';
+            tutorialContent.innerHTML = '';
+        });
+
+        // Display image tutorial
+        imageTutorialBtn.addEventListener('click', () => {
+            tutorialContent.innerHTML = '<iframe src="tui.pdf" frameborder="0"></iframe>';
+        });
+
+        // Display video tutorial
+        videoTutorialBtn.addEventListener('click', () => {
+            tutorialContent.innerHTML = '<video controls><source src="tui.mp4" type="video/mp4"></video>';
         });
     </script>
 
