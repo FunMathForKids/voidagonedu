@@ -182,9 +182,48 @@
             margin-top: 40px;
             line-height: 1.6;
         }
+
+        /* Notification Style */
+        .notification {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #e74c3c;
+            color: white;
+            padding: 20px;
+            font-size: 18px;
+            font-family: 'Press Start 2P', sans-serif;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+        
+        .notification .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+
+<!-- Notification with hyperlink to blog HTML file -->
+<div class="notification">
+    <span>
+        <strong>Voidagon XYZ is under attack.</strong><br>
+        Please <a href="blog.html" style="color: blue; text-decoration: underline;">read this</a> to help us.
+    </span>
+    <button class="close-btn" id="notification-close-btn">X</button>
+</div>
+
+
 
     <h1>V O I D A G O N</h1>
     <h2><span class="x">X</span> <span class="y">Y</span> <span class="z">Z</span></h2>
@@ -200,14 +239,13 @@
 
     <!-- Information Text -->
     <div class="info-text">
-<p>Welcome to 2025! Explore an expanded collection of games!</p>
-<p>With over 40 games available, all undetected and cleverly disguised under alternate names, there's more than ever to enjoy!</p>
-<p>In some folders, you'll find a text file named "Math Vocab." This file deciphers the disguised names, such as "PacMath" (representing "Pac-Man"), helping you identify the games.</p>
-<p>At first glance, you might see around 20 games, but be sure to check the "More" and "Even More" folders for additional hidden gems!</p>
-<p>Here’s a fun fact: If you're wondering how to pronounce VOIDAGON X Y Z, just replace the "hex" in "hexagon" with "Void"—simple and catchy!</p>
-<p>The name VOIDAGON X Y Z combines "Void," "Hexagon," and "X Y Z," with the latter included purely for its stylish flair.</p>
-<p>And if you're here for math games... then GET OUT! </p>
-
+        <p>Welcome to 2025! Explore an expanded collection of games!</p>
+        <p>With over 40 games available, all undetected and cleverly disguised under alternate names, there's more than ever to enjoy!</p>
+        <p>In some folders, you'll find a text file named "Math Vocab." This file deciphers the disguised names, such as "PacMath" (representing "Pac-Man"), helping you identify the games.</p>
+        <p>At first glance, you might see around 20 games, but be sure to check the "More" and "Even More" folders for additional hidden gems!</p>
+        <p>Here’s a fun fact: If you're wondering how to pronounce VOIDAGON X Y Z, just replace the "hex" in "hexagon" with "Void"—simple and catchy!</p>
+        <p>The name VOIDAGON X Y Z combines "Void," "Hexagon," and "X Y Z," with the latter included purely for its stylish flair.</p>
+        <p>And if you're here for math games... then GET OUT!</p>
     </div>
 
     <!-- Tutorial Modal -->
@@ -240,6 +278,12 @@
         closeBtn.addEventListener('click', () => {
             tutorialModal.style.display = 'none';
             tutorialContent.innerHTML = '';
+        });
+
+        // Close notification
+        const notificationCloseBtn = document.getElementById('notification-close-btn');
+        notificationCloseBtn.addEventListener('click', () => {
+            document.querySelector('.notification').style.display = 'none';
         });
 
         // Display image tutorial
