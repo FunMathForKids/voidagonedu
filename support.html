@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voidagon XYZ Support</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body { background: black; color: #00ff00; font-family: 'Courier New', monospace; text-align: center; position: relative; overflow: hidden; }
+        canvas { display: block; position: absolute; top: 0; left: 0; z-index: -1; }
+        
+        .container {
+            background-color: rgba(34, 34, 34, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            width: 60%;
+            margin: 0 auto;
+            box-shadow: 0px 4px 20px rgba(0, 255, 0, 0.2);
+            border: 2px solid #00ff00;
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+        }
+
+        label, select, textarea, button {
+            font-size: 16px;
+            margin-top: 15px;
+            display: block;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 12px;
+            background-color: #111;
+            color: #00ff00;
+            border: 2px solid #00ff00;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        label { text-align: left; font-weight: bold; margin-top: 20px; }
+        textarea { resize: none; }
+        button { cursor: pointer; background-color: #444; color: #00ff00; padding: 12px 20px; font-size: 16px; margin-top: 20px; }
+        button:hover { background-color: #666; }
+    </style>
+</head>
+<body>
+
+<canvas id="c"></canvas>
+
+<div class="container">
+    <h1>Voidagon XYZ Support</h1>
+    <p>Please fill out the form below and select your issue. Your feedback will help us improve.</p>
+
+    <form id="supportForm" onsubmit="return handleSubmit()">
+        <label for="issue">Issue Type:</label>
+        <select id="issue" required>
+            <option value="1">Game Problem</option>
+            <option value="2">Download Problem</option>
+            <option value="3">Premium Issue</option>
+            <option value="4">Feedback</option>
+            <option value="5">Vortex Issue</option>
+        </select>
+
+        <label for="feedback">Your Feedback:</label>
+        <textarea id="feedback" rows="5" placeholder="Input feedback here." required></textarea>
+
+        <button type="submit">Copy Feedback</button>
+    </form>
+
+    <p id="instructions" style="color: #fff; margin-top: 20px;"></p>
+</div>
+
+<script>
+// Matrix rain effect code
+var c = document.getElementById("c");
+var ctx = c.getContext("2d");
+
+// Making the canvas full screen
+c.height = window.innerHeight;
+c.width = window.innerWidth;
+
+// English characters
+var english = "1001010101110101010101010010101000101011101111010101010110101010101010101110000101";
+// Converting the string into an array of single characters
+english = english.split("");
+
+var font_size = 15;
+var columns = c.width / font_size; // Number of columns for the rain
+// An array of drops - one per column
+var drops = [];
+// x below is the x coordinate
+// 1 = y coordinate of the drop (same for every drop initially)
+for (var x = 0; x < columns; x++) drops[x] = 1;
+
+// Drawing the characters
+function draw() {
+    // Black BG for the canvas
+    // Translucent BG to show trail
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, c.width, c.height);
+
+    ctx.fillStyle = "#0F0"; // Green text
+    ctx.font = font_size + "px arial";
+    // Looping over drops
+    for (var i = 0; i < drops.length; i++) {
+        // A random binary character to print
+        var text = english[Math.floor(Math.random() * english.length)];
+        // x = i*font_size, y = value of drops[i]*font_size
+        ctx.fillText(text, i * font_size, drops[i] * font_size);
+
+        // Sending the drop back to the top randomly after it has crossed the screen
+        // Adding a randomness to the reset to make the drops scattered on the Y axis
+        if (drops[i] * font_size > c.height && Math.random() > 0.975)
+            drops[i] = 0;
+
+        // Incrementing Y coordinate
+        drops[i]++;
+    }
+}
+
+setInterval(draw, 33);
+
+// Encode feedback text function (Base64 encoding)
+function encodeFeedback(feedback) {
+    return btoa(feedback); // Use Base64 encoding
+}
+
+// Handle form submission
+function handleSubmit() {
+    const issue = document.getElementById('issue').value;
+    const feedback = document.getElementById('feedback').value;
+    const encodedFeedback = encodeFeedback(feedback);
+
+    // Constructing the message for the clipboard
+    const feedbackContent = `Hello Sparx, I found an error in maths. The feedback code is ${issue}. The other code that was shown is ${encodedFeedback}.`;
+
+    // Copy to clipboard
+    navigator.clipboard.writeText(feedbackContent).then(() => {
+        document.getElementById('instructions').textContent = "Feedback has been copied to your clipboard. Please paste it into an email and send it to vortex0000@yahoo.com.";
+    }).catch(err => {
+        document.getElementById('instructions').textContent = "Failed to copy feedback to clipboard. Please try again.";
+    });
+
+    return false;  // Prevents the page from refreshing
+}
+</script>
+
+</body>
+</html>
