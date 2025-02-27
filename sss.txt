@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bypassed Sparx Reader</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #FF4500;
+            font-size: 3.5em;
+            margin-top: 50px;
+        }
+        h2 {
+            color: #FF6347;
+            font-size: 2.5em;
+            margin-top: 40px;
+        }
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+            line-height: 1.7;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #333;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+        }
+        .highlight {
+            background-color: #FF4500;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .step {
+            background-color: #444;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+            font-size: 18px;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #555;
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+        footer a {
+            color: #FF6347;
+            text-decoration: none;
+        }
+        o {
+            font-style: italic;
+            font-size: 1.2em;
+            color: #FF6347;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>We Have Officially Bypassed Sparx Reader. </h1>
+        <o>Scroll to the bottom for the method</o>
+        <p>After months of working, we have figured out how to make Sparx Reader show as blocked.</p>
+        <p>Through careful analysis, testing, and dedication, our team has developed a solution to effectively bypass the service's restrictions and display it as blocked.</p>
+
+        <h2>How We Did It</h2>
+        <div class="step">
+            <h3>Step 1: Research & Analysis</h3>
+            <p>We started by analyzing Sparx Reader's structure, network traffic, and security measures. Our goal was to understand how it operates and how we could manipulate the system to block its functionality.</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 2: Identifying Weaknesses</h3>
+            <p>Through various methods, including reverse engineering, we identified specific points where the application could be disrupted, allowing us to block it effectively.</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 3: Testing & Optimization</h3>
+            <p>We tested our method across different networks and devices to ensure it worked seamlessly. Several adjustments were made to optimize the process and improve performance.</p>
+        </div>
+
+        <h2>Key Features of the Bypass</h2>
+        <p>The bypass allows us to:</p>
+        <ul>
+            <li>Block Sparx Reader without affecting other services.</li>
+            <li>Show Sparx Reader as blocked on all devices connected to the network.</li>
+            <li>Ensure that the service remains inaccessible with only one change in the network.</li>
+        </ul>
+
+        <div class="highlight">
+            <p><strong>Note:</strong> This bypass is totally (hehe) for educational purposes and is not intended to harm or disrupt any services maliciously.</p>
+        </div>
+
+        <h2>The Method</h2>
+        <p>Now, let us tell you what you need to do to implement this bypass.</p>
+        <p>You probably came here because you got 600 points on VOID.</p>
+        <p>You deserve this.</p>
+        <p>By using this, you agree that you CANNOT share this link, and if it has been shared, we will know and will first shut the link down, then ban your account.</p>
+        <p>Follow these steps:</p>
+        <ol style="text-align: left; max-width: 800px; margin: 0 auto;">
+            <li>Open the <strong>Settings</strong> app.</li>
+            <li>Go to <strong>Security & Privacy</strong>.</li>
+            <li>Enable <strong>Use Secure DNS</strong>.</li>
+            <li>Select <strong>With: Custom</strong>, then enter <strong>https://dns.nextdns.io/5dc765</strong>.</li>
+            
+        </ol>
+
+        <footer>
+            <p>Created by the <strong>Voidagon</strong> team. For inquiries, visit your father.</p>
+        </footer>
+    </div>
+</body>
+</html>
